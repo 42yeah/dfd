@@ -89,6 +89,19 @@ code {
     margin-bottom: 3em;
 }
 
+@media screen and (max-width: 958px) {
+    .container-content {
+        max-width: 70vw;
+    }  
+}
+
+@media screen and (max-width: 780px) {
+    .container-content {
+        max-width: unset;
+        margin: 0 2em 3em;
+    }  
+}
+
 .top-stripe {
     width: 100%;
     height: 3px;
@@ -144,8 +157,8 @@ code {
 }
 
 .details {
-    margin-top: 0.5em;
     color: #888;
+    margin-top: 3.5em;
 }
 
 .accordion {
