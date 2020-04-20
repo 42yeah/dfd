@@ -38,13 +38,17 @@ function drawRandomBalls(thisInstant) {
         return a > b ? a : b;
     }
 
+    function min(a, b) {
+        return a < b ? a : b;
+    }
+
     function updateBalls() {
         for (let i = 0; i < balls.length; i++) {
             const ball = balls[i];
             ball.x += ball.dx * deltaTime;
             ball.y += ball.dy * deltaTime;
             ball.a += ball.ra * deltaTime;
-            if (ball.a > 0.1 && ball.ra > 0) { ball.ra = -ball.ra; }
+            if (ball.a > 2.0 && ball.ra > 0) { ball.ra = -ball.ra; }
             if (ball.a < 0.0) {
                 balls.splice(i, 1);
                 i--;
@@ -60,7 +64,7 @@ function drawRandomBalls(thisInstant) {
         for (let i = 0; i < balls.length; i++) {
             const ball = balls[i];
             ctx.beginPath();
-            ctx.fillStyle = "rgba(96, 184, 24, " + ball.a + ")";
+            ctx.fillStyle = "rgba(96, 184, 24, " + min(0.3, ball.a) + ")";
             ctx.arc(ball.rx, ball.ry, ball.rr, 0, 2.0 * Math.PI, false);
             ctx.fill();
         }
@@ -83,7 +87,7 @@ function drawRandomBalls(thisInstant) {
             dy: randomSgn() * Math.random() * 0.01,
             r: Math.random() * 0.1,
             a: 0.0,
-            ra: Math.random() * 0.1
+            ra: Math.random() * 1.0
         };
         balls.push(ball);
     }

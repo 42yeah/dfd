@@ -4,6 +4,12 @@
     font-family: "Noto Sans SC", Arial, Helvetica, sans-serif;
 }
 
+*::selection {
+    background-color: #60b818;
+    color: white;
+    filter: saturate(200%); /* Not working anyways */
+}
+
 body {
     position: relative;
 }
@@ -289,5 +295,5 @@ code {
 
 .copy {
     margin-top: 20px;
-    font-size: 0.1em;
+    font-size: 0.7em;
 }
