@@ -15,8 +15,7 @@ function toggle(header) {
         header.classList.add("active");
         body.classList.remove("collapsed");
         acch.classList.add("rot90");
-        scrollTo(0, header.getBoundingClientRect().y
-            + window.innerHeight / 2.0);
+        scrollTo(0, window.scrollY + header.getBoundingClientRect().y);
     } else {
         header.classList.remove("active");
         body.classList.add("collapsed");
