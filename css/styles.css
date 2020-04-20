@@ -159,6 +159,7 @@ code {
 
 .button:not(.inactive):hover {
     background-color: #5fad20;
+    border: 2px solid #5fad20;
     color: #333;
 }
 
