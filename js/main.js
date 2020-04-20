@@ -112,15 +112,6 @@ function prize(e) {
 }
 
 function main() {
-    const start = new Date("2020/4/25");
-    const end = new Date("2020/4/30");
-    
-    if (end - new Date() < 0) {
-        reject("提交已经结束");
-    } else if (start - new Date() > 0) {
-        reject("尚未开始接受提交");
-    }
-
     document.querySelectorAll(".accordion-header").forEach(elem => {
         elem.addEventListener("click", () => {
             toggle(elem);
@@ -141,3 +132,12 @@ function main() {
 }
 
 window.addEventListener("load", main);
+
+const start = new Date("2020/4/25");
+const end = new Date("2020/4/30");
+
+if (end - new Date() < 0) {
+    reject("提交已经结束");
+} else if (start - new Date() > 0) {
+    reject("尚未开始接受提交");
+}
